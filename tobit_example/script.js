@@ -49,7 +49,7 @@ function isPrimeNum(n) {
 function addPrimes() {
   let sum = 0;
   let isPrime;
-  for (let n = 2; n < 1000000; n++) {
+  for (let n = 2; n < 100000; n++) {
     isPrime = isPrimeNum(n);
     if (isPrime) {
       sum += n;
