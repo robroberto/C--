@@ -23,14 +23,10 @@ var info = {
 };
 
 async function loadWASM() {
-  let start = Date.now();
   let response = await fetch("test.wasm");
   let bytes = await response.arrayBuffer();
   let wasmObj = await WebAssembly.instantiate(bytes, info);
   wasmExports = wasmObj.instance.exports;
-  let end = Date.now();
-  let durationSec = (end - start) / 1000;
-  console.log("JS -> Dauer in Sekunden: " + durationSec);
 }
 
 loadWASM();
